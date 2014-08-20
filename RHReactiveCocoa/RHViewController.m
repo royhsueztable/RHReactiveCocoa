@@ -7,8 +7,12 @@
 //
 
 #import "RHViewController.h"
+#import <ReactiveCocoa.h>
 
 @interface RHViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 
 @end
 
@@ -18,12 +22,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self setup];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setup
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    RAC(self.outputLabel, text) = self.inputTextField.rac_textSignal;
 }
 
 @end
