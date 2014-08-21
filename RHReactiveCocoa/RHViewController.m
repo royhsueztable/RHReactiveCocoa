@@ -11,8 +11,9 @@
 
 @interface RHViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
-@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *enterButton;
 
 @end
 
@@ -22,13 +23,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+
     [self setup];
 }
 
 - (void)setup
-{
-    RAC(self.outputLabel, text) = self.inputTextField.rac_textSignal;
+{    
+    RAC(self.enterButton, enabled) = [RACSignal combineLatest:@[self.passwordTextField.rac_textSignal, self.confirmPasswordTextField.rac_textSignal] reduce:^(NSString *password, NSString *confirmPassword) {
+        if (password.length == 0) {
+            return @(NO);
+        }
+        return @([password isEqualToString:confirmPassword]);
+    }];
 }
 
 @end

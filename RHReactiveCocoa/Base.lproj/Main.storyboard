@@ -25,25 +25,46 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksF-8I-Wrc">
-                                <rect key="frame" x="133" y="113" width="54" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksF-8I-Wrc">
+                                <rect key="frame" x="131" y="101" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-JU-Bar">
+                                <rect key="frame" x="20" y="180" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="5tQ-Qe-nGe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtV-zM-jN8">
+                                <rect key="frame" x="142" y="269" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KgO-25-FdW" firstAttribute="centerX" secondItem="ksF-8I-Wrc" secondAttribute="centerX" id="Qv0-IC-aIC"/>
-                            <constraint firstItem="KgO-25-FdW" firstAttribute="top" secondItem="ksF-8I-Wrc" secondAttribute="bottom" constant="8" id="SiU-cg-68I"/>
+                            <constraint firstItem="YcB-JU-Bar" firstAttribute="top" secondItem="KgO-25-FdW" secondAttribute="bottom" constant="8" symbolic="YES" id="2Ah-Wv-GfQ"/>
+                            <constraint firstAttribute="centerX" secondItem="dtV-zM-jN8" secondAttribute="centerX" id="6St-hF-vHO"/>
+                            <constraint firstAttribute="centerY" secondItem="dtV-zM-jN8" secondAttribute="centerY" id="KKa-SF-F9r"/>
+                            <constraint firstItem="KgO-25-FdW" firstAttribute="top" secondItem="ksF-8I-Wrc" secondAttribute="bottom" constant="20" id="SiU-cg-68I"/>
+                            <constraint firstAttribute="centerX" secondItem="ksF-8I-Wrc" secondAttribute="centerX" constant="-0.5" id="b5R-3A-uDU"/>
                             <constraint firstItem="KgO-25-FdW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="122" id="gGR-F7-3qI"/>
+                            <constraint firstItem="YcB-JU-Bar" firstAttribute="centerX" secondItem="KgO-25-FdW" secondAttribute="centerX" id="hL0-nN-Ihx"/>
                             <constraint firstAttribute="centerX" secondItem="KgO-25-FdW" secondAttribute="centerX" id="qj2-y4-jXE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputTextField" destination="KgO-25-FdW" id="I4q-zz-GOq"/>
-                        <outlet property="outputLabel" destination="ksF-8I-Wrc" id="6IN-Cz-Whn"/>
+                        <outlet property="confirmPasswordTextField" destination="YcB-JU-Bar" id="TAs-R8-8Za"/>
+                        <outlet property="enterButton" destination="dtV-zM-jN8" id="1ZU-85-bYC"/>
+                        <outlet property="passwordTextField" destination="KgO-25-FdW" id="nap-pX-zHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
